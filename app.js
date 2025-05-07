@@ -1,5 +1,6 @@
 let container = document.querySelector('.container')
-
+let openDialogBtn = document.querySelector('#openDialogBtn')
+const dialog = document.querySelector('#bookDialog')
 const form = document.querySelector('form')
 const myLibrary = [];
 
@@ -62,4 +63,9 @@ form.addEventListener('submit', function (event) {
 
     addBookToLibrary(bookTitle, bookAuthor, bookPages, bookReadStatus)
     displayBooks()
+    dialog.close()
+})
+
+openDialogBtn.addEventListener('click', ()=>{
+    dialog.showModal()
 })
